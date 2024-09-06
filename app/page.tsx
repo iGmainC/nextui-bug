@@ -20,10 +20,7 @@ type FormInput = {
   animal: string;
 };
 export default function Home() {
-  const {
-    register,
-    watch,
-  } = useForm<FormInput>();
+  const { register, watch } = useForm<FormInput>();
   const { register: register2, watch: watch2, setValue: setValue2 } = useForm<FormInput>();
   return (
     <>
@@ -69,10 +66,10 @@ export default function Home() {
           <p>animal type: {typeof watch2('animal') ?? ''}</p>
           <Button
             onClick={() => {
-              setValue2('animal', 'Dog,Cat');
+              setValue2('animal', 'dog,cat');
             }}
           >
-            Set "Dog,Cat"
+            Set "dog,cat"
           </Button>
           <p>The Select component is not set to the corresponding state.</p>
         </div>
